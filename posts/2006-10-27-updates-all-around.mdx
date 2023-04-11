@@ -1,0 +1,10 @@
+---
+title: "Updates All Around!"
+date: "Oct 27 2006"
+date_unformatted: "2006-10-27"
+categories: 
+  - "flash"
+  - "xspf"
+---
+
+Updates everywhere. I've been doing some server cleaning. First off is that the documentation for the XSPF player has been updated for the first time in months. Next comes the player creator. It has been updated a few times in a few days, but I believe it will stay this way for a while. Lastly is player updates; The request for a start\_track with shuffle has been filled, and works perfectly. Also, for the more technical of us, I have included a way to collect stats about your player usage through an external php file (or any language that can read POST variables). This is a dumbed down version of the player I created for IACMusic.com. It can collect the label (title and artist) for each track, as well as the annotation. The script can be customized to include such things as a date, referrer, and ip address. I've included some of these options in an included script. This data can be used however one wishes (for IAC, it was written to a text file, and processed into a database later on). The final player updates were pointed out to me by the ever-watchful eye of [Lucas Gonze](http://gonze.com/weblog/). These are XSPF validation errors. The trackList node needs a capitol 'L', the playlist should be in '.xspf' format, and there is no such thing as a 'type' node in XSPF. This has been changed to meta rel="http://lacymorrow.com/type/" to follow validation. Finally, 'music' is does not follow XSPF format. This has been changed to 'audio' (under the meta node). See it [here](http://lacymorrow.com/projects/xspf).

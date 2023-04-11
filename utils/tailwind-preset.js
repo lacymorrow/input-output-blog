@@ -2,8 +2,8 @@ const plugin = require('tailwindcss/plugin');
 const pluginTypography = require('@tailwindcss/typography');
 const { COLOR_THEMES, FONT_THEMES } = require('../themes');
 
-const THEME = process.env.BLOG_THEME || 'default';
-const FONT_PRIMARY = process.env.BLOG_FONT_HEADINGS || 'sans-serif';
+const THEME = process.env.BLOG_THEME || 'bejamas'; // Originally 'default'
+const FONT_PRIMARY = process.env.BLOG_FONT_HEADINGS || 'serif';
 const FONT_SECONDARY = process.env.BLOG_FONT_BODY || 'sans-serif';
 
 const hoveredSiblingPlugin = plugin(function ({ addVariant, e }) {

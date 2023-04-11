@@ -1,0 +1,17 @@
+---
+title: "Jukebox Files"
+date: "Jun 2 2006"
+date_unformatted: "2006-06-02"
+categories: 
+  - "flash"
+---
+
+Finally posting my very first full-on flash app, my mp3 Jukebox.
+
+This was created just six months after learning flash, about three years ago. Since then I have dropped the project and have begun editing the XSPF player. The only documentation I have is my notes of what needed to be done, and what I had already finished. I'll tell you, its rough trying to understand what I was doing, but this should help some begginers.
+
+The player is actually amazingly detailed. Everything is customizable, right down to each individual button colorand volume fading. There are actually pieces of this player I am in the process of putting into the XSPF. It supports id3 tags as well, although I never saw a point in using them. To help someone trying to work through this out, the info.xml files is all-important. The playlist url is stored here. To embed the player just add "?infourl=info.xml" after the swf url.
+
+The info file is not rearrangable, although renaming the tree or nodes will not hurt anything. The only fault tolerance this player has is for no urls. As I was editing one time, I seem to have broken the total time display, and never bothered to fix it. The popup player never did work either.
+
+Do your worst, download it here: [jukebox](http://lacymorrow.com/projects/xspf "jukebox")

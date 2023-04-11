@@ -1,0 +1,20 @@
+---
+title: "Xspf Video Player"
+date: "May 29 2006"
+date_unformatted: "2006-05-29"
+categories: 
+  - "flash"
+  - "xspf"
+---
+
+The news is out! The XSPF player does video! As well as loading external links, playlists, and files. As of now only FLV video is supported, but soon there will be SWF support as well. All controls have been rewritten for video support, though some streaming FLV files (such as YouTube) will not show info or allow searching.
+
+As well as video, there are many additions. An updater has been created to remind the webhost when there is a newer version of player available. This is turned on by passing "setup=1" in the player URL, and when a newer version is available, an unobtrusive arrow begins to pulse in the bottom right corner of the player.
+
+Radio Mode has been removed and replaced by all around playlist support. Give links between many playlists, or make directories for genre, artist, whatever. Playlists are either XML or XSPF.
+
+Link support has been added to send your customers to any website, or provide urls such as song downloads, contact email links, etc.
+
+All of this has been wrapped together with a new playlist variable, "type". type can be either music, video, playlist, or link. type should only be used if the location is unusable, or the file is being served dynamically (google video being an example). There is a built in type detect, which will use 95 percent of files correctly.
+
+[XSPF](http://lacymorrow.com/projects/xspf)
