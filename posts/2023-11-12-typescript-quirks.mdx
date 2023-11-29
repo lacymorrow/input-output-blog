@@ -1,0 +1,74 @@
+---
+title: "TypeScript Quirks"
+description: "There are some quirks in TypeScript that are not obvious at first glance."
+date: "Nov 12 2023"
+date_unformatted: "2023-11-12"
+categories:
+	- "typescript"
+  - "web"
+  - "stack"
+---
+
+# TypeScript quirks
+
+There are some quirks in TypeScript that are not obvious at first glance.
+
+## `tsconfig.json` `include` and `exclude` properties
+
+**Globbing does not work as expected.** This does not work:
+
+```json
+{
+	"include": ["**/*.{ts,tsx}"]
+}
+```
+
+This does:
+
+```json
+{
+	"include": ["**/*.ts", "**/*.tsx"]
+}
+```
+
+## `keyof` operator
+
+The `keyof` operator in TypeScript is a bit different than in JavaScript. In JavaScript, `keyof` is a unary operator that returns an array of strings representing the keys of its operand. In TypeScript, `keyof` is a type operator that returns a union of string literal types representing the keys of its operand. This is useful for getting the keys of an object, or for extracting the keys from a type.
+
+```ts
+type Person = {
+	name: string;
+	age: number;
+};
+
+type PersonKeys = keyof Person; // "name" | "age"
+
+const person: Person = {
+	name: "John",
+	age: 42,
+};
+
+type PersonKeysType = keyof typeof person; // "name" | "age"
+```
+
+## `typeof` operator
+
+The `typeof` operator in TypeScript is a bit different than in JavaScript. In JavaScript, `typeof` is a unary operator that returns a string representing the type of its operand. In TypeScript, `typeof` is a type operator that returns the type of its operand. This is useful for getting the type of a variable or property, or for extracting the type from a function signature.
+
+```ts
+type Person = {
+	name: string;
+	age: number;
+};
+
+type PersonName = Person["name"]; // string
+type PersonAge = Person["age"]; // number
+
+const person: Person = {
+	name: "John",
+	age: 42,
+};
+
+type PersonNameType = typeof person["name"]; // string
+type PersonAgeType = typeof person["age"]; // number
+```
